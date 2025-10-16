@@ -1,7 +1,7 @@
 package org.itdma.springapi.service;
 
 import org.itdma.springapi.api.model.User;
-import org.springframework.stereotype.Service;
+    import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
