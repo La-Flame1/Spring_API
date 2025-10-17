@@ -17,7 +17,6 @@ public class UnionService {
 
         /// Sample Data
         unionList = new ArrayList<>();
-
         Union union1 = new Union(1, 1, "A", "1234567890", 100, true);
         Union union2 = new Union(2, 2, "B", "1234567890", 100, true);
         Union union3 = new Union(3, 3, "C", "1234567890", 100, true);
