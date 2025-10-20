@@ -5,20 +5,21 @@ import org.itdma.springapi.entity.User;
 import org.itdma.springapi.dto.UserRequestDto;
 import org.itdma.springapi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 
 @RestController
-@RequestMapping("/students")
-public  class UserController {
+@RequestMapping("/users")
+public class UserController {
 
     @Autowired
     private UserService userService;
 
     @PostMapping("/create")
-    public User createUser(@RequestParam UserRequestDto dto) {
+    public User createUser(@RequestBody UserRequestDto dto) {
         return userService.createUser(dto);
     }
 
@@ -34,7 +35,7 @@ public  class UserController {
     }
 
     @PutMapping("/{userId}")
-    public User updateUser(@RequestParam UserRequestDto dto, @PathVariable int userId){
+    public User updateUser(@RequestBody UserRequestDto dto, @PathVariable int userId){
         return userService.updateUser(dto, userId);
     }
 

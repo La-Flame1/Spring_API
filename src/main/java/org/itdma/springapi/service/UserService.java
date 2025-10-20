@@ -7,6 +7,8 @@ import org.itdma.springapi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 
@@ -26,8 +28,10 @@ public class UserService {
         user.setEmail(dto.getEmail());
         user.setPassword(dto.getPassword());
         user.setRole(dto.getRole());
-        user.setCreatedOn(dto.getCreatedOn());
         user.setIsactive(dto.getIsactive());
+    /// Automatically updates the current time the user was created upon successful profile completion.
+        String currentDateTime = LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+        user.setCreatedOn(currentDateTime);
 
         return userRepository.save(user);
     }
